@@ -3,7 +3,7 @@
 				<tr align="center">
 					<td colspan="5"><h2> Modifier le mot de passe</h2></td>
 				</tr>
-</br>
+
 				<tr>
 					<td align="right"><b>Mot de passe actuel:</b></td>
 					<td><input type="password" name="current_pass" size="17" required/></td>
@@ -33,7 +33,7 @@ include("includes/db.php");
   if(isset($_POST['change_pass'])){
 
     $user =$_SESSION['customer_email'];
-
+    //echo $user;
     $current_pass = $_POST['current_pass'];
     $new_pass = $_POST['new_pass'];
     $new_again = $_POST['new_pass_again'];
@@ -41,23 +41,23 @@ include("includes/db.php");
     $sel_pass = "select * from customers where customer_pass='$current_pass' AND customer_email='$user'";
 
     $run_pass = mysqli_query($con, $sel_pass);
-    $check_pass = mysqli_num_rows($run_pass);
-    echo "ffff";
+      echo $check_pass =mysqli_num_rows($run_pass);
+
     if($check_pass==0){
 
-  		echo "<script>alert('Le mot de passe entré est incorrect!!)</script>";
+  		echo "<script>alert('Le mot de passe entré est incorrect!!')</script>";
       exit();
   	}
 
     if($new_pass!=$new_again){
 
-        echo "<script>alert('Les mots de passe ne sont pas identiques!!)</script>";
+        echo "<script>alert('Les mots de passe ne sont pas identiques!!')</script>";
         exit();
     }
     else {
       $update_pass = "update customers set customer_pass='$new_pass' where customer_email='$user'";
       $run_update = mysqli_query($con, $update_pass);
-      echo "<script>alert('Votre mot de passe a été mis à jour avec succès!!)</script>";
+      echo "<script>alert('Votre mot de passe a été mis à jour avec succès!!')</script>";
       echo "<script>window.open('my_account.php','_self')</script>";
     }
 
