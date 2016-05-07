@@ -1,5 +1,5 @@
 <!DOCTYPE>
-<?php 
+<?php
 session_start();
 include("functions/Functions.php");
 include("includes/db.php");
@@ -21,9 +21,9 @@ include("includes/db.php");
 			<img src="images/images.jpg"/>
 			<img id="banner" src="images/lap.jpg"/>
                 </div>
-		
-		<div class="menubar"> 
-                
+
+		<div class="menubar">
+
 			<ul id="menu">
 				<li><a href="index.php">Accueil</a><li/>
 				<li><a href="all_products.php">Produits</a><li/>
@@ -39,14 +39,14 @@ include("includes/db.php");
 					<input type="submit" name="search" value="recherche" />
 				</form>
 			</div>
-				
+
                 </div>
 
-                
+
 
 
 		<div class="content_wrapper">
-                 
+
 			<div id="sidebar">
 
 				<div id="sidebar_title">Catégories</div>
@@ -55,7 +55,7 @@ include("includes/db.php");
 					<?php getCats(); ?>
 
 			        </ul>
-				
+
 				<div id="sidebar_title">Marques</div>
 				<ul id="cats">
 					<?php getBrands(); ?>
@@ -63,18 +63,18 @@ include("includes/db.php");
 			</div>
 
 			<div id="content_area">
-			
-			 	<?php cart(); ?>			
+
+			 	<?php cart(); ?>
 
 				<div id="shopping_cart">
 
 					<span style="float:right; font-size:18px; padding:5px; line-height:40px;">
-					
+
 					Bienvenue ! <b style="color:yellow"> :) **</b>  Nombre d'article: <?php total_items(); ?>  |  Prix total: <?php total_price(); ?>  |<a href="cart.php" style="color:yellow">  Votre panier</a>
 
 					</span>
 				</div>
-				
+
 				<div id="products_box">
 				</br></br>
 <form method="post" action="customer_register.php" enctype="multipart/form-data">
@@ -122,7 +122,7 @@ include("includes/db.php");
 
 					</td>
 				</tr>
-                              
+
 				<tr>
 					<td align="right"><b>Mobile:</b></td>
 					<td><input type="text" name="c_contact" size="50" required/></td>
@@ -132,7 +132,7 @@ include("includes/db.php");
 					<td><input type="file" name="c_image" /></td>
 				</tr>
 				<tr align="center">
-	
+
 					<td colspan="8"><input type="submit" name="register" value="Créer un compte" /></td>
 				</tr>
 </table>
@@ -142,12 +142,12 @@ include("includes/db.php");
 
 			</div>
 		</div>
-		
+
 
 		<div id="footer">
-			<p>&copy; 2016 www.FatKadi.com<p>		
+			<p>&copy; 2016 www.FatKadi.com<p>
 		</div>
- 
+
 	</div>
 
 </body>
@@ -181,12 +181,12 @@ include("includes/db.php");
 			$check_cart = mysqli_num_rows($run_cart);
 
 			if($check_cart==0){
-				
+
 				$_SESSION['customer_email']=$c_email;
 
 				echo "<script>alert('Le compte a été créé avec succès, Merci!!')</script>";
 			        echo "<script>window.open('customer/my_account.php','_self')</script>";
-			
+
 			}
 
 			else {
@@ -201,28 +201,3 @@ include("includes/db.php");
 
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
