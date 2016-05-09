@@ -41,7 +41,7 @@ include("includes/db.php");
     $sel_pass = "select * from customers where customer_pass='$current_pass' AND customer_email='$user'";
 
     $run_pass = mysqli_query($con, $sel_pass);
-      echo $check_pass =mysqli_num_rows($run_pass);
+    $check_pass =mysqli_num_rows($run_pass);
 
     if($check_pass==0){
 

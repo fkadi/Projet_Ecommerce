@@ -24,11 +24,11 @@ include("functions/Functions.php");
 		<div class="menubar">
 
 			<ul id="menu">
-				<li><a href="./index.php">Accueil</a><li/>
-				<li><a href="./all_products.php">Produits</a><li/>
-				<li><a href="./customer/my_account.php">Votre compte</a><li/>
+				<li><a href="../index.php">Accueil</a><li/>
+				<li><a href="../all_products.php">Produits</a><li/>
+				<li><a href="../customer/my_account.php">Votre compte</a><li/>
 				<li><a href="#">S'inscrire</a><li/>
-				<li><a href="./cart.php">Panier</a><li/>
+				<li><a href="../cart.php">Panier</a><li/>
 				<li><a href="#">Contact</a><li/>
 
 			</ul>
@@ -121,9 +121,11 @@ include("functions/Functions.php");
               if(isset($_GET['edit_account'])){
                 include("edit_account.php");
               }
-
               if(isset($_GET['change_pass'])){
                 include("change_pass.php");
+              }
+              if(isset($_GET['delete_account'])){
+                include("delete_account.php");
               }
 
 
